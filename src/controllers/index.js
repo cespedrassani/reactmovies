@@ -1,3 +1,4 @@
 import MoviesController from './movies';
+import LoginController from './login';
 
-export {MoviesController};
+export {MoviesController, LoginController};

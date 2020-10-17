@@ -3,7 +3,7 @@ import {Animated} from 'react-native';
 import Card from '../card';
 import {CARD_HEIGHT, height, styles} from './styles';
 
-const WalletCard = ({item, y, index, onPress}) => {
+const ListCards = ({item, y, index, onPress}) => {
   const position = Animated.subtract(index * CARD_HEIGHT, y);
   const isDisappearing = -CARD_HEIGHT;
   const isTop = 0;
@@ -37,10 +37,8 @@ const WalletCard = ({item, y, index, onPress}) => {
     <Animated.View
       style={[
         styles.card,
-        // eslint-disable-next-line react-native/no-inline-styles
         {
           opacity,
-          marginBottom: index === 0 ? 0 : 20,
           transform: [{translateY}, {scale}],
         },
       ]}
@@ -50,4 +48,4 @@ const WalletCard = ({item, y, index, onPress}) => {
   );
 };
 
-export default WalletCard;
+export default ListCards;

@@ -6,8 +6,9 @@ import {View} from 'native-base';
 import {PropTypes} from 'prop-types';
 
 import {styles} from './styles';
+import {primaryColor} from '../../styles';
 
-const LoaderComponent = ({visible, onDismiss, ...otherProps}) => (
+const Loader = ({visible, onDismiss, ...otherProps}) => (
   <Modal
     {...otherProps}
     onDismiss={onDismiss}
@@ -18,20 +19,20 @@ const LoaderComponent = ({visible, onDismiss, ...otherProps}) => (
     isVisible={visible}>
     <View style={styles.modalBackground}>
       <View style={styles.activityIndicatorWrapper}>
-        <CircleFade size={50} />
+        <CircleFade color={primaryColor} size={50} />
       </View>
     </View>
   </Modal>
 );
 
-LoaderComponent.propTypes = {
+Loader.propTypes = {
   visible: PropTypes.bool,
   onDismiss: PropTypes.func,
 };
 
-LoaderComponent.defaultProps = {
+Loader.defaultProps = {
   visible: false,
   onDismiss: () => {},
 };
 
-export default LoaderComponent;
+export default Loader;
